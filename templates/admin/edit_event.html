@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mlsc-blue': '#0078d4',
+                        'mlsc-dark-blue': '#005a9f',
+                        'mlsc-light-blue': '#40e0d0',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/admin/dashboard" class="text-mlsc-blue hover:text-mlsc-dark-blue mr-4">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h1 class="text-xl font-bold text-gray-900">
+                        <i class="fas fa-edit text-mlsc-blue mr-2"></i>
+                        Edit Event
+                    </h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/admin/dashboard" class="text-gray-600 hover:text-mlsc-blue transition-colors">
+                        <i class="fas fa-tachometer-alt mr-1"></i>Dashboard
+                    </a>
+                    <a href="/admin/logout" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">
+                        <i class="fas fa-sign-out-alt mr-1"></i>Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Error Messages -->
+        {% if error %}
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
+            <i class="fas fa-exclamation-circle mr-2"></i>{{ error }}
+        </div>
+        {% endif %}
+
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <form method="post" action="/admin/edit-event/{{ event_type }}/{{ event_index }}">
+                <!-- Event Info -->
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-semibold text-gray-700">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Editing {{ 'Upcoming' if event_type == 'upcoming' else 'Past' }} Event
+                    </h3>
+                </div>
+
+                <!-- Basic Information -->
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-heading mr-2"></i>Event Title *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="title" 
+                            name="title" 
+                            required 
+                            value="{{ event.title }}"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                            placeholder="Enter event title"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="date" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-calendar mr-2"></i>Date *
+                        </label>
+                        <input 
+                            type="date" 
+                            id="date" 
+                            name="date" 
+                            required 
+                            value="{{ event.date }}"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                        >
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="time" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-clock mr-2"></i>Time *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="time" 
+                            name="time" 
+                            required 
+                            value="{{ event.time }}"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                            placeholder="e.g., 10:00 AM - 2:00 PM"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="venue" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-map-marker-alt mr-2"></i>Venue *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="venue" 
+                            name="venue" 
+                            required 
+                            value="{{ event.venue }}"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                            placeholder="Enter venue location"
+                        >
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-6">
+                    <label for="description" class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-align-left mr-2"></i>Description *
+                    </label>
+                    <textarea 
+                        id="description" 
+                        name="description" 
+                        required 
+                        rows="4"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                        placeholder="Enter event description"
+                    >{{ event.description }}</textarea>
+                </div>
+
+                <!-- Optional Fields -->
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="image" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-image mr-2"></i>Image Filename
+                        </label>
+                        <input 
+                            type="text" 
+                            id="image" 
+                            name="image" 
+                            value="{{ event.image or '' }}"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                            placeholder="e.g., event-image.jpg"
+                        >
+                        <p class="text-sm text-gray-500 mt-1">Upload image to static/img/events/ folder</p>
+                    </div>
+
+                    {% if event_type == 'past' %}
+                    <div>
+                        <label for="attendees" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-users mr-2"></i>Number of Attendees
+                        </label>
+                        <input 
+                            type="number" 
+                            id="attendees" 
+                            name="attendees" 
+                            value="{{ event.attendees or '' }}"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                            placeholder="Enter number of attendees"
+                        >
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Conditional Fields -->
+                {% if event_type == 'upcoming' %}
+                <div class="mb-6">
+                    <label for="registration_link" class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-link mr-2"></i>Registration Link
+                    </label>
+                    <input 
+                        type="url" 
+                        id="registration_link" 
+                        name="registration_link" 
+                        value="{{ event.registration_link or '' }}"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                        placeholder="https://forms.microsoft.com/..."
+                    >
+                </div>
+                {% else %}
+                <div class="mb-6">
+                    <label for="gallery_link" class="block text-sm font-medium text-gray-700 mb-2">
+                        <i class="fas fa-images mr-2"></i>Gallery Link
+                    </label>
+                    <input 
+                        type="url" 
+                        id="gallery_link" 
+                        name="gallery_link" 
+                        value="{{ event.gallery_link or '' }}"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-mlsc-blue focus:border-transparent"
+                        placeholder="https://photos.google.com/..."
+                    >
+                </div>
+                {% endif %}
+
+                <!-- Submit Buttons -->
+                <div class="flex justify-end space-x-4">
+                    <a href="/admin/dashboard" class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400 transition-colors">
+                        <i class="fas fa-times mr-2"></i>Cancel
+                    </a>
+                    <button type="submit" class="bg-mlsc-blue text-white px-6 py-3 rounded-lg hover:bg-mlsc-dark-blue transition-colors">
+                        <i class="fas fa-save mr-2"></i>Update Event
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

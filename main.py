@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse
 import uvicorn
 
 # Import routers
-from routers import home, events, about
+from routers import home, events, about, admin
 
 # Create FastAPI app instance
 app = FastAPI(
@@ -24,6 +24,7 @@ templates = Jinja2Templates(directory="templates")
 app.include_router(home.router, tags=["home"])
 app.include_router(events.router, prefix="/events", tags=["events"])
 app.include_router(about.router, prefix="/about", tags=["about"])
+app.include_router(admin.router, prefix="/admin", tags=["admin"])
 
 # Root redirect to home
 @app.get("/", response_class=HTMLResponse)
