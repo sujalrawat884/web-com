@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+
+{% block title %}Events - MLSC MGMCOET{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-gradient-to-r from-mlsc-blue to-mlsc-light-blue text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Our Events
+        </h1>
+        <p class="text-xl opacity-90 max-w-3xl mx-auto">
+            Join us for exciting workshops, seminars, and networking events designed to enhance your technical skills and career prospects.
+        </p>
+    </div>
+</section>
+
+<!-- Upcoming Events -->
+{% if upcoming_events %}
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Upcoming Events
+            </h2>
+            <p class="text-lg text-gray-600">
+                Don't miss these exciting upcoming events!
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for event in upcoming_events %}
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-100">
+                {% if event.image %}
+                <img src="{{ url_for('static', path='img/events/' + event.image) }}" alt="{{ event.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <div class="w-full h-48 bg-gradient-to-r from-mlsc-blue to-mlsc-light-blue flex items-center justify-center">
+                    <i class="fas fa-calendar-alt text-6xl text-white opacity-50"></i>
+                </div>
+                {% endif %}
+                
+                <div class="p-6">
+                    <div class="mb-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Upcoming
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        {{ event.title }}
+                    </h3>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-calendar text-mlsc-blue mr-3"></i>
+                            <span>{{ event.formatted_date }}</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt text-mlsc-blue mr-3"></i>
+                            <span>{{ event.venue }}</span>
+                        </div>
+                        {% if event.time %}
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-clock text-mlsc-blue mr-3"></i>
+                            <span>{{ event.time }}</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        {{ event.description }}
+                    </p>
+                    
+                    {% if event.registration_link %}
+                    <a href="{{ event.registration_link }}" target="_blank" class="inline-block bg-mlsc-blue text-white px-6 py-2 rounded-lg font-semibold hover:bg-mlsc-dark-blue transition-colors">
+                        Register Now
+                    </a>
+                    {% else %}
+                    <span class="inline-block bg-gray-100 text-gray-600 px-6 py-2 rounded-lg font-semibold">
+                        Registration Opening Soon
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Past Events -->
+{% if past_events %}
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Past Events
+            </h2>
+            <p class="text-lg text-gray-600">
+                Take a look at our previous successful events
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for event in past_events %}
+            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-gray-100">
+                {% if event.image %}
+                <img src="{{ url_for('static', path='img/events/' + event.image) }}" alt="{{ event.title }}" class="w-full h-48 object-cover">
+                {% else %}
+                <div class="w-full h-48 bg-gradient-to-r from-gray-400 to-gray-600 flex items-center justify-center">
+                    <i class="fas fa-calendar-check text-6xl text-white opacity-50"></i>
+                </div>
+                {% endif %}
+                
+                <div class="p-6">
+                    <div class="mb-4">
+                        <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">
+                            Past Event
+                        </span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">
+                        {{ event.title }}
+                    </h3>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-calendar text-mlsc-blue mr-3"></i>
+                            <span>{{ event.formatted_date }}</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt text-mlsc-blue mr-3"></i>
+                            <span>{{ event.venue }}</span>
+                        </div>
+                        {% if event.attendees %}
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-users text-mlsc-blue mr-3"></i>
+                            <span>{{ event.attendees }} attendees</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        {{ event.description }}
+                    </p>
+                    
+                    {% if event.gallery_link %}
+                    <a href="{{ event.gallery_link }}" target="_blank" class="inline-block bg-gray-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-700 transition-colors">
+                        View Gallery
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- No Events Message -->
+{% if not upcoming_events and not past_events %}
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-gray-50 rounded-xl p-12">
+            <i class="fas fa-calendar-plus text-6xl text-gray-400 mb-6"></i>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                No Events Available
+            </h3>
+            <p class="text-lg text-gray-600 mb-8">
+                We're currently planning exciting new events. Stay tuned for updates!
+            </p>
+            <a href="/" class="inline-block bg-mlsc-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-mlsc-dark-blue transition-colors">
+                Back to Home
+            </a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Call to Action -->
+<section class="py-16 bg-mlsc-blue">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Want to Stay Updated?
+        </h2>
+        <p class="text-xl text-white opacity-90 mb-8 max-w-3xl mx-auto">
+            Join our community to get notified about upcoming events, workshops, and networking opportunities.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#" class="bg-white text-mlsc-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Join WhatsApp Group
+            </a>
+            <a href="/about" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-mlsc-blue transition-colors transform hover:scale-105">
+                <i class="fas fa-users mr-2"></i>
+                Meet Our Team
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

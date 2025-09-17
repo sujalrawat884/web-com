@@ -1,0 +1,80 @@
+{
+  "upcoming": [
+    {
+      "title": "Introduction to Azure Cloud Computing",
+      "date": "2025-10-15",
+      "time": "2:00 PM - 4:00 PM",
+      "venue": "Computer Lab 1, MGMCOET",
+      "description": "Learn the fundamentals of Microsoft Azure, including cloud services, virtual machines, and storage solutions. Perfect for beginners looking to start their cloud journey.",
+      "image": "azure-workshop.jpg",
+      "registration_link": "https://forms.microsoft.com/azure-workshop",
+      "organizer": "MLSC MGMCOET"
+    },
+    {
+      "title": "Power Platform Workshop",
+      "date": "2025-10-28",
+      "time": "10:00 AM - 3:00 PM",
+      "venue": "Seminar Hall, MGMCOET",
+      "description": "Hands-on workshop covering Power Apps, Power Automate, and Power BI. Build your first low-code applications and automate business processes.",
+      "image": "power-platform.jpg",
+      "registration_link": null,
+      "organizer": "MLSC MGMCOET"
+    },
+    {
+      "title": "Student Developer Conference 2025",
+      "date": "2025-11-12",
+      "time": "9:00 AM - 5:00 PM",
+      "venue": "Main Auditorium, MGMCOET",
+      "description": "Annual student developer conference featuring industry experts, technical sessions, and networking opportunities. Join us for a full day of learning and innovation.",
+      "image": "dev-conference.jpg",
+      "registration_link": "https://forms.microsoft.com/dev-conference-2025",
+      "organizer": "MLSC MGMCOET"
+    }
+  ],
+  "past": [
+    {
+      "title": "Introduction to GitHub and Open Source",
+      "date": "2025-09-10",
+      "time": "3:00 PM - 5:00 PM",
+      "venue": "Computer Lab 2, MGMCOET",
+      "description": "Workshop on version control with Git and GitHub, contributing to open source projects, and best practices for collaborative development.",
+      "image": "github-workshop.jpg",
+      "attendees": 45,
+      "gallery_link": "https://photos.google.com/github-workshop",
+      "organizer": "MLSC MGMCOET"
+    },
+    {
+      "title": "AI and Machine Learning Fundamentals",
+      "date": "2025-08-25",
+      "time": "2:00 PM - 4:30 PM",
+      "venue": "Seminar Hall, MGMCOET",
+      "description": "Introduction to artificial intelligence and machine learning concepts using Microsoft's AI services and Azure ML Studio.",
+      "image": "ai-ml-workshop.jpg",
+      "attendees": 38,
+      "gallery_link": "https://photos.google.com/ai-ml-workshop",
+      "organizer": "MLSC MGMCOET"
+    },
+    {
+      "title": "Web Development with .NET Core",
+      "date": "2025-07-15",
+      "time": "10:00 AM - 2:00 PM",
+      "venue": "Computer Lab 1, MGMCOET",
+      "description": "Hands-on session on building modern web applications using ASP.NET Core, Entity Framework, and deploying to Azure.",
+      "image": "dotnet-workshop.jpg",
+      "attendees": 32,
+      "gallery_link": "https://photos.google.com/dotnet-workshop",
+      "organizer": "MLSC MGMCOET"
+    },
+    {
+      "title": "MLSC Orientation & Welcome Event",
+      "date": "2025-06-20",
+      "time": "4:00 PM - 6:00 PM",
+      "venue": "Main Auditorium, MGMCOET",
+      "description": "Welcome event for new members introducing them to the Microsoft Learn Student Community, its objectives, and upcoming activities.",
+      "image": "orientation-2025.jpg",
+      "attendees": 85,
+      "gallery_link": "https://photos.google.com/orientation-2025",
+      "organizer": "MLSC MGMCOET"
+    }
+  ]
+}

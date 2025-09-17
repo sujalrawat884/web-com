@@ -1,0 +1,294 @@
+/* Custom CSS for MLSC MGMCOET Website */
+
+/* CSS Variables for consistent theming */
+:root {
+    --mlsc-blue: #0078d4;
+    --mlsc-dark-blue: #005a9f;
+    --mlsc-light-blue: #40e0d0;
+    --mlsc-gradient: linear-gradient(135deg, #0078d4, #40e0d0);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    40%, 43% {
+        transform: translate3d(0, -10px, 0);
+    }
+    70% {
+        transform: translate3d(0, -5px, 0);
+    }
+    90% {
+        transform: translate3d(0, -2px, 0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+/* Custom hover effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg-primary {
+    background: linear-gradient(135deg, #0078d4, #40e0d0);
+}
+
+.gradient-bg-secondary {
+    background: linear-gradient(135deg, #005a9f, #0078d4);
+}
+
+/* Custom shadow effects */
+.shadow-custom {
+    box-shadow: 0 10px 25px rgba(0, 120, 212, 0.1);
+}
+
+.shadow-custom-hover {
+    transition: box-shadow 0.3s ease;
+}
+
+.shadow-custom-hover:hover {
+    box-shadow: 0 15px 35px rgba(0, 120, 212, 0.2);
+}
+
+/* Mobile menu transitions */
+.mobile-menu {
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.show {
+    display: block !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0078d4;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #005a9f;
+}
+
+/* Responsive text adjustments */
+@media (max-width: 640px) {
+    .text-responsive-xl {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .text-responsive-lg {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+}
+
+/* Custom button styles */
+.btn-primary {
+    background: linear-gradient(135deg, #0078d4, #005a9f);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #005a9f, #004578);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 120, 212, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #0078d4;
+    border: 2px solid #0078d4;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background: #0078d4;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading animations */
+.loading-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Custom focus styles for accessibility */
+.focus-custom:focus {
+    outline: 2px solid #40e0d0;
+    outline-offset: 2px;
+}
+
+/* Utility classes for spacing */
+.section-padding {
+    padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 2rem 0;
+    }
+}
+
+/* Custom navbar styles */
+.navbar-glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Event card styles */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Team member card styles */
+.team-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #f3f4f6;
+}
+
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 120, 212, 0.1);
+}
+
+/* Footer styles */
+.footer-link {
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+/* Hero section background animation */
+.hero-bg {
+    background: linear-gradient(-45deg, #0078d4, #40e0d0, #005a9f, #0078d4);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

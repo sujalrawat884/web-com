@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MLSC MGMCOET{% endblock %}</title>
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Tailwind config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mlsc-blue': '#0078d4',
+                        'mlsc-dark-blue': '#005a9f',
+                        'mlsc-light-blue': '#40e0d0',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gray-50 flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo and Brand -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-3">
+                        <img src="https://mlsctiet.com/assets/mlsc-logo-Dm8vot8r.png" alt="MLSC Logo" class="h-10 w-10">
+                        <div>
+                            <h1 class="text-xl font-bold text-mlsc-blue">MLSC MGMCOET</h1>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="text-gray-700 hover:text-mlsc-blue px-3 py-2 rounded-md text-sm font-medium transition-colors {% if request.url.path == '/' %}text-mlsc-blue border-b-2 border-mlsc-blue{% endif %}">
+                            Home
+                        </a>
+                        <a href="/events" class="text-gray-700 hover:text-mlsc-blue px-3 py-2 rounded-md text-sm font-medium transition-colors {% if '/events' in request.url.path %}text-mlsc-blue border-b-2 border-mlsc-blue{% endif %}">
+                            Events
+                        </a>
+                        <a href="/about" class="text-gray-700 hover:text-mlsc-blue px-3 py-2 rounded-md text-sm font-medium transition-colors {% if '/about' in request.url.path %}text-mlsc-blue border-b-2 border-mlsc-blue{% endif %}">
+                            About Us
+                        </a>
+                        <a href="https://chat.whatsapp.com/HllKy0Ydo3XF7VEl68EpEe" class="bg-mlsc-blue text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-mlsc-dark-blue transition-colors">
+                            Join Us
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-mlsc-blue p-2 rounded-md">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="/" class="text-gray-700 hover:text-mlsc-blue block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="/events" class="text-gray-700 hover:text-mlsc-blue block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="/about" class="text-gray-700 hover:text-mlsc-blue block px-3 py-2 rounded-md text-base font-medium">About Us</a>
+                <a href="#contact" class="bg-mlsc-blue text-white block px-3 py-2 rounded-md text-base font-medium">Join Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://mlsctiet.com/assets/mlsc-logo-Dm8vot8r.png" alt="MLSC Logo" class="h-10 w-10">
+                        <div>
+                            <h3 class="text-lg font-bold">Microsoft Learn Student Community</h3>
+                            <p class="text-gray-400">MGMCOET, Noida</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Empowering students through technology, learning, and innovation. Join us to explore the latest in Microsoft technologies and build amazing projects.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/events" class="text-gray-400 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/mlsc-mgmcoet/" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mlsc_mgmcoet/" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2025 Microsoft Learn Student Community - MGMCOET. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', path='js/main.js') }}"></script>
+</body>
+</html>

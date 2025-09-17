@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Home - MLSC MGMCOET{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-mlsc-blue to-mlsc-light-blue text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+                Microsoft Learn Student Community
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-light mb-8">
+                MGMCOET, Noida
+            </h2>
+            <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                Empowering the next generation of tech innovators through hands-on learning, 
+                collaborative projects, and cutting-edge Microsoft technologies.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#next-event" class="bg-white text-mlsc-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Upcoming Events
+                </a>
+                <a href="/about" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-mlsc-blue transition-colors transform hover:scale-105">
+                    <i class="fas fa-users mr-2"></i>
+                    Meet Our Team
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Next Event Preview -->
+{% if next_event %}
+<section id="next-event" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Next Event
+            </h2>
+            <p class="text-lg text-gray-600">
+                Don't miss our upcoming event!
+            </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gradient-to-r from-mlsc-blue to-mlsc-light-blue rounded-2xl p-8 text-white transform hover:scale-105 transition-transform">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="mb-4">
+                            <span class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                Upcoming Event
+                            </span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                            {{ next_event.title }}
+                        </h3>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar text-mlsc-light-blue mr-3"></i>
+                                <span class="text-lg">{{ next_event.date }}</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-mlsc-light-blue mr-3"></i>
+                                <span class="text-lg">{{ next_event.venue }}</span>
+                            </div>
+                        </div>
+                        <p class="text-lg opacity-90 mb-6">
+                            {{ next_event.description }}
+                        </p>
+                        <a href="/events" class="inline-block bg-white text-mlsc-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            View All Events
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-10 rounded-xl p-6">
+                            <i class="fas fa-calendar-check text-6xl text-mlsc-light-blue mb-4"></i>
+                            <p class="text-lg font-semibold">Save the Date!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Features Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                What We Do
+            </h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                We're dedicated to fostering a community of learners, innovators, and future tech leaders
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Learning -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+                <div class="bg-mlsc-blue bg-opacity-10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-graduation-cap text-3xl text-mlsc-blue"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Learning & Development</h3>
+                <p class="text-gray-600">
+                    Workshops, seminars, and hands-on sessions covering the latest Microsoft technologies and industry best practices.
+                </p>
+            </div>
+            
+            <!-- Projects -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+                <div class="bg-mlsc-blue bg-opacity-10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-code text-3xl text-mlsc-blue"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Collaborative Projects</h3>
+                <p class="text-gray-600">
+                    Work on real-world projects with fellow students, building applications that solve actual problems.
+                </p>
+            </div>
+            
+            <!-- Networking -->
+            <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+                <div class="bg-mlsc-blue bg-opacity-10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-network-wired text-3xl text-mlsc-blue"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Networking</h3>
+                <p class="text-gray-600">
+                    Connect with industry professionals, alumni, and like-minded peers to expand your professional network.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-16 bg-mlsc-blue">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Join Our Community?
+        </h2>
+        <p class="text-xl text-white opacity-90 mb-8 max-w-3xl mx-auto">
+            Be part of a vibrant community of learners and innovators. Start your journey with Microsoft technologies today!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://chat.whatsapp.com/HllKy0Ydo3XF7VEl68EpEe" class="bg-white text-mlsc-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors transform hover:scale-105">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Join WhatsApp Group
+            </a>
+            <a href="/events" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-mlsc-blue transition-colors transform hover:scale-105">
+                <i class="fas fa-calendar mr-2"></i>
+                View Events
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
