@@ -3,7 +3,7 @@
     {
       "name": "Yuvika Miglani",
       "role": "President",
-      "photo": "https://drive.google.com/file/d/1XCWu9qN9DAKgU4AO16nQ9e8nEa00u1YJ/view?usp=sharing",
+      "photo": "Yuvika.jpg",
       "bio": "A dynamic leader who blends strategic thinking (\"MLSA Brain\") with relentless execution (\"MLSC Reins\") to drive impactful change. Under her guidance, our community thrives on innovation and collaboration.",
       "linkedin": "https://www.linkedin.com/in/yuvika-miglani-795788301/",
       "email": "president@mlsc-mgmcoet.org"
@@ -11,7 +11,7 @@
     {
       "name": "Yash Katiyar",
       "role": "Vice President",
-      "photo": "priya-patel.jpg",
+      "photo": "Yash.jpg",
       "bio": "A visionary leader who combines sharp strategic insight (\"MLSA intellect\") with unstoppable drive (\"MLSC grit\") to transform ideas into reality. Under his leadership, our community soars with innovation and collaboration.",
       "linkedin": "https://www.linkedin.com/in/yash-katiyar-174576248/",
       "email": "vp@mlsc-mgmcoet.org"
@@ -19,7 +19,7 @@
     {
       "name": "Tushar Saxena",
       "role": "Chief Orchestration",
-      "photo": "rohit-mehta.jpg",
+      "photo": "Tushar-Saxena.jpg",
       "bio": "As Cheif Orchestrator, Tushar brings energy, creativity, and a touch of calculated chaos to our community. He's the spark behind our biggest ideas and the glue that holds our wildest plans together.",
       "linkedin": "https://linkedin.com/in/tusharsaxena18",
       "email": "orchestration@mlsc-mgmcoet.org"
@@ -28,128 +28,134 @@
   "teams": {
     "UI/UX Design": [
       {
-        "name": "Sneha Joshi",
-        "role": "UI/UX Lead",
+        "name": "Parth Verma",
+        "role": "UI/UX Head",
         "photo": "sneha-joshi.jpg",
-        "linkedin": "https://linkedin.com/in/sneha-joshi-design"
+        "linkedin": "https://linkedin.com/in/parth-verma-5821a4320"
       },
       {
-        "name": "Kartik Desai",
-        "role": "Graphic Designer",
+        "name": "Ashutosh Sharma",
+        "role": "Member",
         "photo": "kartik-desai.jpg",
         "linkedin": "https://linkedin.com/in/kartik-desai-graphics"
       },
       {
-        "name": "Ananya Singh",
-        "role": "UX Researcher",
+        "name": "Rishabh",
+        "role": "Member",
+        "photo": "ananya-singh.jpg",
+        "linkedin": "https://linkedin.com/in/ananya-singh-ux"
+      },
+      {
+        "name": "Yash Kumar",
+        "role": "Member",
         "photo": "ananya-singh.jpg",
         "linkedin": "https://linkedin.com/in/ananya-singh-ux"
       }
     ],
     "Social Media": [
       {
-        "name": "Ishaan Kumar",
-        "role": "Social Media Manager",
+        "name": "Parth Verma",
+        "role": "The Social Head",
         "photo": "ishaan-kumar.jpg",
         "linkedin": "https://linkedin.com/in/ishaan-kumar-social"
       },
       {
-        "name": "Riya Gupta",
-        "role": "Content Creator",
+        "name": "Shreya Singh",
+        "role": "Member",
         "photo": "riya-gupta.jpg",
         "linkedin": "https://linkedin.com/in/riya-gupta-content"
       },
       {
-        "name": "Aryan Verma",
-        "role": "Community Manager",
+        "name": "Deepali Manan",
+        "role": "Member",
+        "photo": "aryan-verma.jpg",
+        "linkedin": "https://linkedin.com/in/aryan-verma-community"
+      },
+      {
+        "name": "Rashi Shukla",
+        "role": "Member",
         "photo": "aryan-verma.jpg",
         "linkedin": "https://linkedin.com/in/aryan-verma-community"
       }
     ],
     "CP & DSA": [
       {
-        "name": "Vikash Yadav",
-        "role": "CP Team Lead",
+        "name": "Sujal Singh Rawat",
+        "role": "The Algorithm Architect",
         "photo": "vikash-yadav.jpg",
-        "linkedin": "https://linkedin.com/in/vikash-yadav-cp"
+        "linkedin": "https://linkedin.com/in/sujalrawat884"
       },
       {
-        "name": "Pooja Reddy",
-        "role": "Algorithm Specialist",
+        "name": "Mahika Rastogi",
+        "role": "Member",
         "photo": "pooja-reddy.jpg",
         "linkedin": "https://linkedin.com/in/pooja-reddy-algo"
       },
       {
-        "name": "Harsh Agarwal",
-        "role": "Contest Coordinator",
+        "name": "Akshita Mishra",
+        "role": "Member",
+        "photo": "harsh-agarwal.jpg",
+        "linkedin": "https://linkedin.com/in/harsh-agarwal-contests"
+      },
+      {
+        "name": "Rishi Kumar",
+        "role": "Member",
         "photo": "harsh-agarwal.jpg",
         "linkedin": "https://linkedin.com/in/harsh-agarwal-contests"
       }
     ],
     "PR & Partnership": [
       {
-        "name": "Neha Chopra",
+        "name": "Nitish Dubey",
         "role": "PR Lead",
         "photo": "neha-chopra.jpg",
         "linkedin": "https://linkedin.com/in/neha-chopra-pr"
       },
       {
-        "name": "Siddharth Jain",
-        "role": "Partnership Manager",
+        "name": "Prateek Chand",
+        "role": "Member",
         "photo": "siddharth-jain.jpg",
         "linkedin": "https://linkedin.com/in/siddharth-jain-partnerships"
-      },
-      {
-        "name": "Kavya Nair",
-        "role": "Outreach Coordinator",
-        "photo": "kavya-nair.jpg",
-        "linkedin": "https://linkedin.com/in/kavya-nair-outreach"
       }
     ],
     "Event Management": [
       {
-        "name": "Aadhya Sharma",
-        "role": "Event Manager",
+        "name": "Tushar Verma",
+        "role": "The Event Director",
         "photo": "aadhya-sharma.jpg",
         "linkedin": "https://linkedin.com/in/aadhya-sharma-events"
       },
       {
-        "name": "Deepak Pandey",
-        "role": "Logistics Coordinator",
+        "name": "Pranav Mishra",
+        "role": "Member",
         "photo": "deepak-pandey.jpg",
         "linkedin": "https://linkedin.com/in/deepak-pandey-logistics"
-      },
-      {
-        "name": "Manisha Bhatt",
-        "role": "Volunteer Coordinator",
-        "photo": "manisha-bhatt.jpg",
-        "linkedin": "https://linkedin.com/in/manisha-bhatt-volunteers"
       }
     ],
     "Web Development": [
       {
-        "name": "Ajay Kushwaha",
-        "role": "Full Stack Developer",
+        "name": "Saurabh Kumar",
+        "role": "The Code Commander",
         "photo": "ajay-kushwaha.jpg",
         "linkedin": "https://linkedin.com/in/ajay-kushwaha-fullstack"
       },
       {
-        "name": "Tanya Mishra",
-        "role": "Frontend Developer",
+        "name": "Lovely Sharma",
+        "role": "Member",
         "photo": "tanya-mishra.jpg",
         "linkedin": "https://linkedin.com/in/tanya-mishra-frontend"
       },
       {
-        "name": "Rahul Saxena",
-        "role": "Backend Developer",
-        "photo": "rahul-saxena.jpg",
-        "linkedin": "https://linkedin.com/in/rahul-saxena-backend"
+        "name": "Aishwarya Sharma",
+        "role": "Member",
+        "photo": "tanya-mishra.jpg",
+        "linkedin": "https://linkedin.com/in/tanya-mishra-frontend"
       },
       {
-        "name": "Shruti Malhotra",
-        "role": "DevOps Engineer",
-        "photo": "shruti-malhotra.jpg",
-        "linkedin": "https://linkedin.com/in/shruti-malhotra-devops"
+        "name": "Muskan Kumari",
+        "role": "Member",
+        "photo": "tanya-mishra.jpg",
+        "linkedin": "https://linkedin.com/in/tanya-mishra-frontend"
       }
     ]
   }
